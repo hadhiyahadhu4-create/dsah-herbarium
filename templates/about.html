@@ -1,0 +1,284 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us | DSAH Herbarium{% endblock %}
+
+{% block extra_head %}
+<style>
+    .about-header {
+        background: #053A24;
+        color: var(--white);
+        padding: 4rem 5%;
+        text-align: center;
+    }
+
+    .about-container {
+        max-width: 1200px;
+        margin: 4rem auto;
+        padding: 0 5%;
+    }
+
+    .section-title {
+        color: var(--forest-green);
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: var(--sage-green);
+        border-radius: 2px;
+    }
+
+    .card {
+        background: var(--white);
+        border-radius: 12px;
+        padding: 2.5rem;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        margin-bottom: 3rem;
+        border-left: 5px solid var(--forest-green);
+    }
+
+    .card p {
+        color: var(--light-text);
+        margin-bottom: 1rem;
+        font-size: 1.05rem;
+        text-align: justify;
+    }
+
+    .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--white);
+        border-radius: 12px;
+        padding: 2rem;
+    }
+
+    .logo-img {
+        max-width: 100%;
+        max-height: 200px;
+        border-radius: 8px;
+    }
+
+    /* Developers Section */
+    .dev-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .dev-card {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: var(--transition);
+        border: 1px solid var(--border);
+    }
+
+    .dev-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--sage-green);
+        box-shadow: 0 10px 25px rgba(46, 91, 61, 0.15);
+    }
+
+    .dev-role {
+        color: var(--sage-green);
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .dev-name {
+        color: var(--forest-green);
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+        .grid-2 {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="about-header">
+    <h1>About the Herbarium</h1>
+    <p style="margin-top: 1rem; opacity: 0.9; max-width: 600px; margin-left:auto; margin-right:auto;">
+        A center for botanical excellence, research, and digitization.
+    </p>
+</div>
+
+<div class="about-container">
+
+    <!-- College Section -->
+    <div class="card">
+        <h2 class="section-title">
+            <a href="https://teresas.ac.in/" target="_blank" title="Visit St. Teresa's College Official Website"
+                style="text-decoration: none; color: inherit; transition: var(--transition);">
+                St. Teresa's College (Autonomous) 🔗
+            </a>
+        </h2>
+        <div class="grid-2">
+            <div>
+                <p>Founded in 1925, St. Teresa’s College (Autonomous), Ernakulam is one of Kerala’s premier institutions
+                    for women’s education, celebrating a century of academic excellence and women’s empowerment in 2025.
+                    Over the past 100 years, the college has nurtured generations of confident, competent, and socially
+                    committed women from diverse backgrounds.</p>
+                <p>The institution is recognized for its holistic approach to education, combining academic excellence
+                    with value-based learning, personal growth, leadership development, and community engagement.
+                    Through innovative curriculum design, research-oriented learning, and student-centered pedagogy, the
+                    college continues to adapt to the evolving demands of higher education and society.</p>
+                <p>As a distinguished centre of learning, St. Teresa’s College remains committed to fostering
+                    intellectual curiosity, social responsibility, and inclusive growth while shaping future leaders
+                    equipped to contribute meaningfully to society and nation-building.</p>
+
+                <div style="margin-top: 1.5rem;">
+                    <a href="https://teresas.ac.in/" target="_blank" class="view-btn"
+                        style="text-decoration: none; display: inline-block; padding: 8px 18px; font-weight:600; font-size: 0.95rem;">
+                        Visit Official Website 🌐
+                    </a>
+                </div>
+            </div>
+            <div class="logo-container">
+                <a href="https://teresas.ac.in/" target="_blank" title="Visit St. Teresa's College Official Website"
+                    style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+                    <img src="{% static 'images/stc_logo.png' %}" alt="St. Teresa's College Logo" class="logo-img"
+                        style="transition: transform 0.3s; cursor: pointer;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Department Section -->
+    <div class="card">
+        <h2 class="section-title">Department of Botany</h2>
+        <div class="grid-2">
+            <div>
+                <p>Established in 1957, the Department of Botany at St. Teresa's College is one of the oldest and most
+                    prestigious departments of the institution. Offering undergraduate, postgraduate, and doctoral
+                    programmes, the department is recognized for its academic excellence, research contributions, and
+                    commitment to holistic education.</p>
+                <p>The department holds the distinction of producing the first Ph.D. in Botany under Mahatma Gandhi
+                    University and has awarded 32 doctoral degrees to date. With advanced laboratories, ICT-enabled
+                    classrooms, a botanical museum, botanical garden, department library, and the internationally
+                    indexed Dr. Sr. Avita Herbarium (DSAH) housing over 8,800 specimens, the department provides a
+                    dynamic environment for teaching, research, and innovation in botanical sciences.</p>
+
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <span
+                        style="background: var(--light-green); color: var(--forest-green); padding: 5px 15px; border-radius: 20px; font-weight:600; font-size: 0.9rem;">Established
+                        1957</span>
+                    <span
+                        style="background: var(--light-green); color: var(--forest-green); padding: 5px 15px; border-radius: 20px; font-weight:600; font-size: 0.9rem;">Doctoral
+                        Research Centre</span>
+                    <span
+                        style="background: var(--light-green); color: var(--forest-green); padding: 5px 15px; border-radius: 20px; font-weight:600; font-size: 0.9rem;">32
+                        Ph.D. Degrees</span>
+                </div>
+            </div>
+            <div class="logo-container">
+                <img src="{% static 'images/botany_logo.jpeg' %}" alt="Department of Botany Logo" class="logo-img">
+            </div>
+        </div>
+    </div>
+
+    <!-- Herbarium Section -->
+    <div class="card">
+        <h2 class="section-title">Dr. Sr. Avita Herbarium (DSAH)</h2>
+        <div class="grid-2">
+            <div>
+                <p>The Herbarium housed at the Department of Botany has long served as an integral centre for botanical
+                    research, teaching, and biodiversity documentation within the department. In 2024, the herbarium
+                    received official recognition through the allotment of its acronym, the Dr. Sr. Avita Herbarium
+                    (DSAH), and was indexed in the Index Herbariorum, marking an important milestone in its development
+                    and academic significance.</p>
+                <p>The herbarium houses more than 8,800 preserved plant specimens representing the rich and diverse
+                    flora of the Western Ghats, one of the world’s biodiversity hotspots. A significant portion of the
+                    collection has been contributed by Dr. Sr. Avita, whose efforts have greatly enriched the
+                    repository.</p>
+                <p>DSAH actively supports taxonomic studies, academic learning, and scientific documentation, while
+                    continuing to strengthen initiatives in herbarium digitization, specimen curation, and biodiversity
+                    data management. Through its growing collections and research support, the herbarium contributes to
+                    the preservation and understanding of India’s plant diversity.</p>
+
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <span
+                        style="background: var(--light-green); color: var(--forest-green); padding: 5px 15px; border-radius: 20px; font-weight:600; font-size: 0.9rem;">Index
+                        Herbariorum (2024)</span>
+                    <span
+                        style="background: var(--light-green); color: var(--forest-green); padding: 5px 15px; border-radius: 20px; font-weight:600; font-size: 0.9rem;">8,800+
+                        Specimens</span>
+                    <span
+                        style="background: var(--light-green); color: var(--forest-green); padding: 5px 15px; border-radius: 20px; font-weight:600; font-size: 0.9rem;">Western
+                        Ghats Flora</span>
+                </div>
+            </div>
+            <div class="logo-container"
+                style="background: var(--light-green); border-radius: 16px; min-height: 200px; display: flex; align-items: center; justify-content: center;">
+                <svg viewBox="0 0 100 100"
+                    style="width: 120px; height: 120px; color: var(--forest-green); fill: currentColor; filter: drop-shadow(0 8px 16px rgba(46, 91, 61, 0.15));">
+                    <path
+                        d="M50,15 C50,15 25,35 25,60 C25,75 35,85 50,85 C65,85 75,75 75,60 C75,35 50,15 50,15 Z M50,25 C50,25 65,42 65,60 C65,70 58,77 50,77 C42,77 35,70 35,60 C35,42 50,25 50,25 Z" />
+                    <path d="M50,25 L50,85" stroke="var(--forest-green)" stroke-width="2" stroke-dasharray="3,3" />
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Developers Section -->
+    <h2 class="section-title" style="text-align: center; margin-top: 4rem;">The Team Behind DSAH</h2>
+    <p style="text-align: center; color: var(--light-text); max-width: 600px; margin: 0 auto;">
+        This digital platform is brought to life through the collaborative efforts of our esteemed faculty and student
+        developers.
+    </p>
+
+    <div class="dev-grid">
+        <div class="dev-card">
+            <span class="dev-role">Faculty Guide</span>
+            <h3 class="dev-name">No Name</h3>
+            <p style="font-size: 0.95rem; line-height: 1.6; margin-top: 10px; color: var(--light-text);">
+                Department of Botany<br>St. Teresa's College (Autonomous)
+            </p>
+        </div>
+        <div class="dev-card">
+            <span class="dev-role">Mentors</span>
+            <h3 class="dev-name" style="margin-bottom: 0.2rem;">Dr. Veena Antony</h3>
+            <h3 class="dev-name">Dr. Archana Menon P</h3>
+            <p style="font-size: 0.95rem; line-height: 1.6; margin-top: 10px; color: var(--light-text);">
+                Department of Cybersecurity & Applied Computing<br>St. Teresa's College (Autonomous)
+            </p>
+        </div>
+        <div class="dev-card">
+            <span class="dev-role">Lead Student Developer</span>
+            <h3 class="dev-name">Hadhiya K S</h3>
+            <p style="font-size: 0.95rem; line-height: 1.6; margin-top: 10px; color: var(--light-text);">
+                Department of Cybersecurity & Applied Computing<br>St. Teresa's College (Autonomous)
+            </p>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
